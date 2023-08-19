@@ -13,12 +13,15 @@
   },
   "scripts": {
     "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/main.js",
     "lint": "eslint --ext .ts,.tsx .",
     "lint:fix": "eslint --fix --ext .ts,.tsx ."
   },
   "dependencies": {
     "@embellish/env": "workspace:^",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "@embellish/configs": "workspace:^",

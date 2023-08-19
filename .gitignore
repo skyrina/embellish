@@ -75,3 +75,4 @@ $RECYCLE.BIN/
 **/.env.*
 
 packages/env/src/env-shims.d.ts
+apps/api/profiles.db

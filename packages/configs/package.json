@@ -6,6 +6,13 @@
   "author": "tbd",
   "license": "MIT",
   "exports": {
+    ".": {
+      "import": "./dist/package.mjs",
+      "require": "./dist/package.js",
+      "default": "./dist/package.js",
+      "types": "./dist/package.d.ts",
+      "entrypoint": "./src/package.ts"
+    },
     "./tsup": {
       "import": "./dist/tsup.mjs",
       "require": "./dist/tsup.js",
