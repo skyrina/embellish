@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "useDefineForClassFields": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "react",
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "exclude": ["node_modules", "**/node_modules", "**/dist", "**/test", "**/.next"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

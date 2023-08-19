@@ -1,0 +1,34 @@
+{
+  "name": "embellish",
+  "description": "",
+  "version": "0.0.0",
+  "author": "tbd",
+  "license": "MIT",
+  "authors": [
+    "skyrina <sorryu02@gmail.com> (https://skyrina.dev)",
+    "noramass <nora@reichwald.me> (https://nora.lol)",
+    "amalyris"
+  ],
+  "keywords": [],
+  "scripts": {
+    "packages:build": "pnpm -r build",
+    "packages:lint": "pnpm -r --parallel lint",
+    "packages:lint:fix": "pnpm -r --parallel lint:fix"
+  },
+  "dependencies": {
+    "tslib": "^2.6.1",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6",
+    "ts-node": "^10.9.1",
+    "@swc/core": "^1.3.76",
+    "@swc/jest": "^0.2.29"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyrina/embellish.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skyrina/embellish/issues"
+  },
+  "homepage": "https://github.com/skyrina/embellish#readme"
+}

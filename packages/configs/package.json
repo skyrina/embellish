@@ -1,0 +1,41 @@
+{
+  "name": "@embellish/configs",
+  "version": "0.0.0",
+  "description": "configuration for embellish packages",
+  "since": 2023,
+  "author": "tbd",
+  "license": "MIT",
+  "exports": {
+    "./tsup": {
+      "import": "./dist/tsup.mjs",
+      "require": "./dist/tsup.js",
+      "default": "./dist/tsup.js",
+      "types": "./dist/tsup.d.ts",
+      "entrypoint": "./src/tsup.ts"
+    },
+    "./eslint": {
+      "import": "./dist/eslint.mjs",
+      "require": "./dist/eslint.js",
+      "default": "./dist/eslint.js",
+      "entrypoint": "./src/eslint.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ."
+  },
+  "dependencies": {
+    "tsup": "^7.2.0",
+    "eslint": "^8.47.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "prettier": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.2"
+  }
+}
