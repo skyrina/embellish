@@ -31,9 +31,6 @@ export async function init() {
   app.use(passport.initialize());
   app.use(passport.session());
 
-
-  app.get("/ping", (req, res) => res.send("pong!"));
-
   app.get("/auth", passport.authenticate("discord"));
   app.get("/auth/callback", passport.authenticate("discord", {
     failureRedirect: "/login",
@@ -47,7 +44,9 @@ export async function init() {
 
   app.get("/profile/:id?", async (req, res) => {
     const id = req.params.id ?? (req as any).user?.id;
-    if (!IdSchema.parse(id)) return res.status(400).json({ error: `Invalid discord id: ${id}` });
+    if (!id) return res.status(401).json({ error: "Unauthorized" });
+    try { IdSchema.parse(id) }
+    catch (e) { return res.status(400).json({ error: `Invalid discord id: ${id}` }); }
     const profile = await Profile.findOneBy({ id });
     return res.json(profile ?? { id });
   });
@@ -55,10 +54,13 @@ export async function init() {
   app.post("/profile", async (req, res) => {
     if (!req.isAuthenticated()) return res.status(401).json({ error: "Unauthorized" });
     const id = (req as any).user.id;
-    if (!IdSchema.parse(id)) return res.status(400).json({ error: `Invalid discord id: ${id}` });
-    const body = ProfileSchema.parse(req.body);
-    await Profile.upsert({ ...body, id, }, ["id"]);
-    return res.json(await Profile.findOneBy({ id }));
+    try {
+      const body = ProfileSchema.parse(req.body);
+      await Profile.upsert({ ...body, id, }, ["id"]);
+      return res.json(await Profile.findOneBy({ id }));
+    } catch (e) {
+      res.status(400).json(e);
+    }
   });
 
   await new Promise<void>(resolve => {
