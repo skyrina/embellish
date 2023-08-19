@@ -1,14 +1,12 @@
-import { Database } from "sqlite3";
+import { DataSource } from "typeorm";
+import { isDev } from "@embellish/env";
+import { Profile } from "src/entity/profile";
 
-export const db = new Database("profiles.db");
-
-db.serialize(() => {
-  // language=SQLite
-  db.run(`CREATE TABLE IF NOT EXISTS PROFILES (
-    id text unique not null,
-    name_color integer,
-    text_color integer,
-    extended_bio text
-  );`);
+export const db = new DataSource({
+  type: "sqlite",
+  database: "profiles.db",
+  logging: isDev(),
+  synchronize: isDev(),
+  entities: [Profile],
 });
 

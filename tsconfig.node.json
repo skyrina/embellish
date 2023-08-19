@@ -6,6 +6,8 @@
     "resolveJsonModule": true,
     "lib": ["esnext"],
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "downlevelIteration": true,
   },
   "include": [

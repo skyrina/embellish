@@ -21,7 +21,8 @@
   "dependencies": {
     "@embellish/env": "workspace:^",
     "express": "^4.18.2",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "typeorm": "^0.3.17"
   },
   "devDependencies": {
     "@embellish/configs": "workspace:^",
