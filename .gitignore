@@ -72,4 +72,6 @@ $RECYCLE.BIN/
 **/*.tgz
 **/.cache
 **/out
-**/.env*
+**/.env.*
+
+packages/env/src/env-shims.d.ts

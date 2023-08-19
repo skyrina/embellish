@@ -1,0 +1,31 @@
+{
+  "name": "@embellish/env",
+  "version": "0.0.0",
+  "description": "generate types for process.env and accessors",
+  "since": 2023,
+  "author": "tbd",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "entrypoint": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "pnpm generate-env-shims && tsup && pnpm reference-shims",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx .",
+    "generate-env-shims": "ts-node scripts/generate-env-shims.ts",
+    "reference-shims": "ts-node scripts/reference-shims.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@embellish/configs": "workspace:^",
+    "@types/node": "^20.4.10"
+  }
+}

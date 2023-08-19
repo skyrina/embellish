@@ -1,0 +1,22 @@
+{
+  "name": "@embellish/plugin",
+  "version": "0.0.0",
+  "description": "embellish plugin for vendetta and vencord",
+  "since": 2023,
+  "author": "tbd",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/main.js",
+      "entrypoint": "./src/main.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ."
+  },
+  "dependencies": {
+    "@embellish/configs": "workspace:^"
+  }
+}

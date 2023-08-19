@@ -12,7 +12,7 @@ export interface PackageJsonExportFields {
   main?: string;
   module?: string;
   types?: string;
-  exports?: PackageJsonExport | PackageJsonExport[] | Record<string, PackageJsonExport>;
+  exports?: PackageJsonExport | PackageJsonExport[] | Record<string, Omit<PackageJsonExport, "node">>;
   entrypoint?: string;
 }
 
@@ -40,7 +40,7 @@ export interface PackageJson
     PackageJsonExportFields {}
 
 export interface PackageExport {
-  node: string;
+  node?: string;
   import?: string;
   require?: string;
   types?: string;
