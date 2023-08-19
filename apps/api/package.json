@@ -22,7 +22,8 @@
     "@embellish/env": "workspace:^",
     "express": "^4.18.2",
     "sqlite3": "^5.1.6",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.17",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@embellish/configs": "workspace:^",
