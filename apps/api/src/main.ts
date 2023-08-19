@@ -46,7 +46,7 @@ export async function init() {
   });
 
   app.get("/profile/:id?", async (req, res) => {
-    const id = req.params.id ?? (req as any).user.id;
+    const id = req.params.id ?? (req as any).user?.id;
     if (!IdSchema.parse(id)) return res.status(400).json({ error: `Invalid discord id: ${id}` });
     const profile = await Profile.findOneBy({ id });
     return res.json(profile ?? { id });
