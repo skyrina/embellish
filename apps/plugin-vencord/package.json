@@ -1,0 +1,29 @@
+{
+  "name": "@embellish/plugin-vencord",
+  "version": "0.0.0",
+  "description": "embellish plugin for vencord",
+  "since": 2023,
+  "author": "tbd",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "entrypoint": "./src/main.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ."
+  },
+  "dependencies": {
+    "@embellish/configs": "workspace:^",
+    "@embellish/env": "workspace:^",
+    "@vencord/types": "^0.1.2"
+  },
+  "devDependencies": {
+    "@fal-works/esbuild-plugin-global-externals": "^2.1.2",
+    "@types/node": "^20.5.1"
+  }
+}
